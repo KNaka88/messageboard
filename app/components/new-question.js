@@ -13,7 +13,7 @@ export default Ember.Component.extend({
       var params = {
         title: this.get('title'),
         questionby: this.get('questionby'),
-        note: this.get('note')
+        note: this.get('note'),
       };
       //Delete input from input form
       this.set('title', "");

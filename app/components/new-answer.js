@@ -5,11 +5,14 @@ export default Ember.Component.extend({
     saveAnswer() {
       var params = {
         answerby: this.get('answerby'),
-        answernote: this.get('answernote')
+        answernote: this.get('answernote'),
+        question: this.get('question')
       };
       this.set('answerby', "");
       this.set('answernote', "");
       this.sendAction('saveAnswer', params);
-    }
+    },
+
+
   }
 });

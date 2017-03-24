@@ -7,18 +7,7 @@
   {{/each}}
 </ul>
 
+{{new-question saveQuestion="saveQuestion" question=model}}
 
-<ul>
-  {{#each model.answers as |answer|}}
-    <li>{{answer.answerby}}-{{answer.answernote}}</li>
-  {{/each}}
-</ul>
-
-{{new-answer saveAnswer="saveAnswer"}}
-
-
-
-
-{{new-question saveQuestion="saveQuestion"}}
 
 {{outlet}}
