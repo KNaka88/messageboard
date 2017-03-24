@@ -1,0 +1,18 @@
+
+<form>
+  <div class='form-group'>
+    <label for="title">Title</label>
+    {{input type="text" value=title id='title'}}
+  </div>
+  <div class='form-group'>
+    <label for="questionby">Name</label>
+    {{input type="text" value=questionby id='questionby'}}
+  </div>
+  <div class='form-group'>
+    <label for="note">Question</label>
+    {{input type='textarea' value=note id='note'}}
+  </div>
+  <button {{action 'saveQuestion'}}>Save</button>
+</form>
+
+{{yield}}
