@@ -173,7 +173,6 @@ Specify what it takes to deploy your app.
         -- handle saveAnswer (action: saveAnswer)
 
   ##### Component
-  For index page
     * question-tile.hbs:
         --Display all questions threads and the paths (title + questions with overhidden)
         --button Delete question (action: delete)
@@ -185,7 +184,6 @@ Specify what it takes to deploy your app.
     * new-question.js:
         -- create params (action: saveQuestion)
 
-  For question page
     * question-detail.hbs:
        -- display specific question and answers, delete button (action: deleteQuestion)
     * question-detail.js
