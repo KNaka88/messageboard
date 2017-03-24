@@ -1,6 +1,10 @@
-  <li>{{question.note}}</li>
-  <button {{action 'delete' question}}>Delete Question</button>
 
-  {{update-question question=question update="update"}}
+
+<li>
+  {{#link-to 'question' question.id}} {{question.title}}{{/link-to}}
+</li>
+  <!-- {{update-question question=question update="update"}}
+
+  {{question-detail question=model destroyQuestion="destroyQuestion"}} -->
 
 {{yield}}
