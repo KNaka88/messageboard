@@ -7,6 +7,7 @@ export default Ember.Route.extend({
 
   actions: {
     destroyQuestion(question) {
+      console.log("I'm here");
       var answer_deletions = question.get('answers').map(function(answer) {
         return answer.destroyRecord();
       });
