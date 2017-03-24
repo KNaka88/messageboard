@@ -2,10 +2,20 @@
 
 <p>We hope you find exactly what you're looking for in a place to stay.</p>
 <ul>
-  {{#each model as |question|}}
+  {{#each model.questions as |question|}}
     {{question-tile question=question}}
   {{/each}}
 </ul>
+
+
+<ul>
+  {{#each model.answers as |answer|}}
+    {{answer.answerby}}
+  {{/each}}
+</ul>
+
+
+
 
 {{new-question saveQuestion="saveQuestion"}}
 
