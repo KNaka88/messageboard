@@ -3,12 +3,9 @@
     <div class='panel-heading'>
       <div class='panel-title'>
         {{#link-to 'question' question.id}}
-          <h4>{{question.title}}</h4>
+          <h4>{{question.title}}    by {{question.questionby}}</h4>
         {{/link-to}}
       </div>
-    </div>
-    <div class='panel-body'>
-      <p class='note-field'>{{question.note}}</p>
     </div>
   </div>
 
