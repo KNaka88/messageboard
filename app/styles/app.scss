@@ -3,15 +3,29 @@
   margin: 5px;
 }
 
+.jumbotron {
+  background:linear-gradient(135deg,#f9dbff,#fff9db);
+  margin-top: 70px;
+  border-radius: 30%;
+  border-color: lightgray;
+}
+
+#nav-home {
+  text-align: center;
+  margin-top:15px;
+  font-size: 3rem;
+}
+
 #create-new {
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
 .navbar {
-  background: linear-gradient(135deg,#FFF,#FFF);
+  background: linear-gradient(135deg,#50E3C2,#85BAFF);
   opacity: 0.7;
   position: fixed;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -25,6 +39,14 @@
 .note-field {
   overflow: hidden;
 }
+
+.question, .reply-answer, .all-answer {
+  margin-bottom: 5%;
+  border-bottom: 2px solid lightgray;
+
+
+}
+
 
 
 @import "ember-bootstrap/bootstrap";
