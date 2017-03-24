@@ -1,0 +1,23 @@
+{ "questions": [{
+    "title": "Veruca Salt",
+    "questionby": "San Francisco",
+    "note": "Estate"
+
+  }, {
+    "title": "Mike Teavee",
+    "questionby": "Seattle",
+    "note": "Condo"
+
+  }, {
+    "title": "Violet Beauregarde",
+    "questionby": "Portland",
+    "note": "Apartment"
+  }],
+  "answers": [{
+    "answerby": "Andrea",
+    "answernote": 4
+  }, {
+    "answerby": "Alex",
+    "answernote": "Nice view of the volcano!"
+  }]
+}
