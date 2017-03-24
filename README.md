@@ -1,10 +1,139 @@
-# board
+## Planning
+1. Configuration/dependencies
+  * This should include ALL dependencies.
+  * It should also include WHERE they are defined and used in the project
+  * It could include a short description of what each does for you
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+  A. Use hardcoded data first and display result (Question)
+  B. Add functionallity that create new data (Question)
+  C. Add functionallity of edit delete
+  D. Add answer form and create button, display result  
+  E. Manage one to many relationship (hasMany and belongsTo)
+  F. Add delete button (answer)
+  G. Refactoring and add extra functionallity if there is more time  
+
+
+  2. STRUCTURE
+#### Firebase
+  * messageboard:
+    ** questions: title, author, note, answers(hasMany 'answers')
+    ** answers: author, note, question(belongsTo 'question')
+
+#### Ember
+* router.js:
+    --this.route('question', {path: '/question/:question_id'})
+
+* application.hbs:
+    -- include nav bar (links), main title
+
+* messageboard.json:
+    --template for firebase (qustions, answers)
+
+##### Models
+  * question.js:
+    --questions: question, questionby, note, answers(hasMany 'answers')
+  * answer.js:
+    --answers: answerby, answer, question(belongsTo 'question'), rating
+
+##### Route
+  * index.js:
+    --model():
+      findAll question
+      findAll answer
+    --actions:
+      saveQuestion
+  * index.hbs:
+      -- display question-tile
+      -- display new-question
+
+
+  * question.js:
+      --model():
+        findRecord('question', params.question_id)
+      actions:
+        --updateQuestion
+        --destoryQuestion
+        --saveAnswer
+  * question.hbs
+      -- handle updateQuestion (edit-question)
+      -- handle question-detail (action: destoryQuestion, destroyAnswer)
+      -- handle saveAnswer (action: saveAnswer)
+
+##### Component
+
+For index page
+  * question-tile.hbs:
+      --Display all questions threads and the paths (title + questions with overhidden)
+      --button Delete question (action: delete)
+  * question-tile.js:
+      --set if statement on or off
+
+  * new-question.hbs:
+      -- input form (action: saveQuestion)
+  * new-question.js:
+      -- create params (action: saveQuestion)
+
+
+For question page
+
+  //Display Question + Delete button
+  * question-detail.hbs:
+     -- display specific question and answers, delete button (action: deleteQuestion)
+  * question-detail.js
+     -- handle deleteQuestion (action: destroyQuestion)
+
+
+  //Edit Question and Form
+  * edit-question.hbs
+     -- input form (action: updateQuestion)
+  * edit-question.js
+    -- create params (action: updateQuestion)
+
+  //Display Answers +
+  * answer-tile.hbs
+    --display answers
+    --delete button (action: delete answer)
+
+  * answer-tile.js
+    --confirm delete answer (action: destroyAnswer, answer)
+
+
+  //Create Answer and Form
+  * new-answer.hbs:
+      -- input form: (action: saveAnswwer)
+  * new-answer.js:
+      -- create params (action: saveQuestion)
+
+
+4. UX/UI
+  * Include and modify bootstrap/materialize/Sass etc.
+  * Develop custom style
+
+5. Polish
+  * Refactor minor portion of...
+  * Delete unused...
+  * Make README awesome
+
+
+
+#Koji Nakagawa
+
+#### Javascript 2nd Week Independent Project for Epicodus, 3.24.2017
+
+## Description
+* This website is the second independent project for Epicodus "Javascript" class.
+* This website offers message-board that user can post questions and answers.
+
+
+
+## Specifications
+|Behavior|Input|Output|
+|--------|-----|------|
+| User can search Doctors by query    | "toothache"  | Doctor's name, image, contact info, .etc |
+
+
 
 ## Prerequisites
-
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
@@ -16,9 +145,27 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd board`
+* `cd message-board`
 * `npm install`
 * `bower install`
+* Go to Firebase and get API key and paste to config/enviornment.js
+[Firebase](https://firebase.google.com/)
+
+
+//Check if I will use this add on!!!!!!
+* `ember install emberfire`
+
+* `ember install ember-bootstrap`
+* `ember generate ember-bootstrap`
+
+* `ember install ember-cli-sass`
+
+* `ember install ember-truth-helpers`
+
+* `npm install --save-dev ember-bootstrap-modal`
+* `ember g ember-bootstrap-modal`
+
+* `ember install ember-burger-menu`
 
 ## Running / Development
 
@@ -50,3 +197,41 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+  ## Known Bugs
+  * If you found some errors, please let me know. Any suggestions are highly appreciated.
+
+  ## Technologies Used
+  * HTML
+  * CSS
+  * Bootstrap
+  * Javascript
+  * jQuery
+  * Node.js
+  * npm
+  * bower
+  * Sass
+  * Ember.js
+
+
+  ## License
+  _Copyright (c) 2017 **Koji Nakagawa**_
+
+  _Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:_
+
+  _The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software._
+
+  _THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE._
