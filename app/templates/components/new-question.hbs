@@ -1,4 +1,4 @@
-
+{{#if addNewQuestion}}
 <form>
   <div class='form-group'>
     <label for="title">Title</label>
@@ -15,4 +15,7 @@
   <button {{action 'saveQuestion'}}>Save</button>
 </form>
 
+{{else}}
+  <button {{action 'questionFormShow'}}>New Question </button>
+{{/if}}
 {{yield}}

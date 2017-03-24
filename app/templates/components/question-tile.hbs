@@ -1,3 +1,6 @@
   <li>{{question.note}}</li>
   <button {{action 'delete' question}}>Delete Question</button>
+
+  {{update-question question=question update="update"}}
+
 {{yield}}

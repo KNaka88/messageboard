@@ -3,7 +3,7 @@
 <p>We hope you find exactly what you're looking for in a place to stay.</p>
 <ul>
   {{#each model as |question|}}
-    {{question-tile question=question destroyQuestion="destroyQuestion"}}
+    {{question-tile question=question destroyQuestion="destroyQuestion" update="update"}}
   {{/each}}
 </ul>
 
