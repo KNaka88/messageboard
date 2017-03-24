@@ -1,8 +1,17 @@
-<li>{{question.note}}</li>
+
+<div class='panel panel-info'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+        <h4>{{question.title}} by {{question.questionby}}</h4>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p class='detail-field'>{{question.note}}</p>
+  </div>
+</div>
 
 
 
-<h2>Answers</h2>
 <ul>
   {{#each question.answers as |answer|}}
     {{answer-tile answer=answer destroyAnswer="destroyAnswer"}}
