@@ -1,15 +1,13 @@
 
 
+{{new-question saveQuestion="saveQuestion" question=model}}
+
 <h3>Recent Questions</h3>
 
-<ul>
   {{#each model.questions as |question|}}
-
     {{question-tile question=question}}
   {{/each}}
-</ul>
 
-{{new-question saveQuestion="saveQuestion" question=model}}
 
 
 {{outlet}}

@@ -2,12 +2,12 @@
   <form>
     <div class='form-group'>
       <label for='answerby'>Name</label>
-      {{input value=answerby id='answerby'}}
+      {{input class='form-control' value=answerby id='answerby'}}
     </div>
     <div class='form-group'>
       <label for='answernote'>Answer</label>
-      {{textarea value=answernote id='answernote'}}
+      {{textarea class='form-control' value=answernote id='answernote'}}
     </div>
-    <button {{action 'saveAnswer'}} class='btn btn-success'>Post Answer</button>
+    <button {{action 'saveAnswer'}} class='btn btn-success btn-block'>Post Answer</button>
   </form>
 {{yield}}

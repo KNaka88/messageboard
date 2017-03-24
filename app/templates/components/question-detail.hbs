@@ -1,13 +1,18 @@
 
 
 
+<h2>All Answers</h2>
 
-
-<ul>
-  {{#each question.answers as |answer|}}
+{{#each question.answers as |answer|}}
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    <h3 class='panel-title'>{{answer.answerby}}'s Answer</h3>
+  </div>
+  <div class='panel-body'>
     {{answer-tile answer=answer destroyAnswer="destroyAnswer"}}
-  {{/each}}
-</ul>
+  </div>
+</div>
+{{/each}}
 
 
 {{yield}}

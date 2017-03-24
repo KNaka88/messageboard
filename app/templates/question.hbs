@@ -7,12 +7,14 @@
   </div>
   <div class='panel-body'>
     <p class='detail-field'>{{model.note}}</p>
+
     {{update-question question=model update="update"}}
-    <button class='btn btn-danger' {{action 'delete' model}}>Delete Question</button>
+    <button class='btn pull-right btn-danger' {{action 'delete' model}}>Delete Question</button>
   </div>
 </div>
+{{new-answer saveAnswer="saveAnswer" question=model}}
+
 
 {{question-detail question=model destroyAnswer="destroyAnswer"}}
-{{new-answer saveAnswer="saveAnswer" question=model}}
 
 {{outlet}}
