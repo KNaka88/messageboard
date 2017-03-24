@@ -1,21 +1,41 @@
-{{#if addNewQuestion}}
-<form>
-  <div class='form-group'>
-    <label for="title">Title</label>
-    {{input value=title id='title'}}
-  </div>
-  <div class='form-group'>
-    <label for="questionby">Name</label>
-    {{input value=questionby id='questionby'}}
-  </div>
-  <div class='form-group'>
-    <label for="note">Question</label>
-    {{textarea value=note id='note'}}
-  </div>
-  <button {{action 'saveQuestion'}}>Save</button>
-</form>
-
-{{else}}
-  <button {{action 'questionFormShow'}}>New Question </button>
-{{/if}}
 {{yield}}
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Create Question
+</button>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLongTitle">New Question</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class='form-group'>
+            <label for="title">Title</label>
+            {{input class='form-control' value=title id='title'}}
+          </div>
+          <div class='form-group'>
+            <label for="questionby">Name</label>
+            {{input class='form-control' value=questionby id='questionby'}}
+          </div>
+          <div class='form-group'>
+            <label for="note">Question</label>
+            {{textarea class='form-control' value=note id='note'}}
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" {{action 'saveQuestion' }} data-dismiss="modal">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

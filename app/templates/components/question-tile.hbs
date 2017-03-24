@@ -1,10 +1,16 @@
 
+  <div class='panel panel-info'>
+    <div class='panel-heading'>
+      <div class='panel-title'>
+        {{#link-to 'question' question.id}}
+          <h4>{{question.title}}</h4>
+        {{/link-to}}
+      </div>
+    </div>
+    <div class='panel-body'>
+      <p class='note-field'>{{question.note}}</p>
+    </div>
+  </div>
 
-<li>
-  {{#link-to 'question' question.id}} {{question.title}}{{/link-to}}
-</li>
-  <!-- {{update-question question=question update="update"}}
-
-  {{question-detail question=model destroyQuestion="destroyQuestion"}} -->
 
 {{yield}}

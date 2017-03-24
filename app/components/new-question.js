@@ -1,8 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  addNewQuestion: false,
-
   actions: {
 
     questionFormShow() {
@@ -19,10 +17,7 @@ export default Ember.Component.extend({
       this.set('title', "");
       this.set('questionby', "");
       this.set('note', "");
-
-      //hide form
-      this.set('addNewQuestion', false);
-
+      
       //send save action
       this.sendAction('saveQuestion', params);
     }
