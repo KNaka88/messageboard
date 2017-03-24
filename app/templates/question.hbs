@@ -1,7 +1,18 @@
-{{question-detail question=model destroyQuestion="destroyQuestion" destroyAnswer="destroyAnswer"}}
+<h2>Question from {{model.questionby}}</h2>
+<div class='panel panel-info'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+        <h4>{{model.title}} by {{model.questionby}}</h4>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p class='detail-field'>{{model.note}}</p>
+    {{update-question question=model update="update"}}
+    <button class='btn btn-danger' {{action 'delete' model}}>Delete Question</button>
+  </div>
+</div>
 
-{{update-question question=model update="update"}}
-
+{{question-detail question=model destroyAnswer="destroyAnswer"}}
 {{new-answer saveAnswer="saveAnswer" question=model}}
 
 {{outlet}}
