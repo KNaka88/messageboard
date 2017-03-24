@@ -10,9 +10,11 @@
 
 <ul>
   {{#each model.answers as |answer|}}
-    {{answer.answerby}}
+    <li>{{answer.answerby}}-{{answer.answernote}}</li>
   {{/each}}
 </ul>
+
+{{new-answer saveAnswer="saveAnswer"}}
 
 
 
